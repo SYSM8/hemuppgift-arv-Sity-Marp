@@ -22,7 +22,8 @@
 
 
             Player player1 = new HumanPlayer("bob");
-            Player player2 = new ComputerPlayer("beb");
+            //Player player2 = new ComputerPlayer("beb");
+            Player player2 = new SuperComputerPlayer("beb");
             Player currentPlayer = player1;
 
 
