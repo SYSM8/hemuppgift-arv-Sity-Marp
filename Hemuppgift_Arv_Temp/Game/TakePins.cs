@@ -2,12 +2,13 @@
 {
     internal class TakePins
     {
-        //Här är main klassen där koden ska testas, lägg in i mappen
         static void Main(string[] args)
         {
-
+            // creates an object of the Board class
             Board GameBoard = new Board();
 
+
+            //user input for how many pins there should be.
             Console.WriteLine("How many pins this round?");
             string input = Console.ReadLine();
             if (int.TryParse(input, out int PinNmbr))
@@ -19,8 +20,26 @@
                 Console.WriteLine("invalid input");
             }
 
-            GameBoard.TakePins(5);
-            Console.WriteLine(GameBoard.getNoPins());
+
+            Player player1 = new HumanPlayer("bob");
+            Player player2 = new HumanPlayer("beb");
+            Player currentPlayer = player1;
+
+
+            //The game's main loop that runs as long as there are still pins.
+            while (GameBoard.getNoPins() > 0)
+            {
+                Console.WriteLine($"Pins remaining: {GameBoard.getNoPins()}");
+                int pinsTaken = currentPlayer.TakePins(GameBoard);
+
+                if (GameBoard.getNoPins() == 0)
+                {
+                    Console.WriteLine($"{currentPlayer.userId} took the last pin, {currentPlayer.userId} loses.");
+                }
+
+                currentPlayer = (currentPlayer == player1) ? player2 : player1; // Switch between players after taking a turn.
+            }
+
         }
     }
 }

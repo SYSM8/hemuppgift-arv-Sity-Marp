@@ -23,7 +23,7 @@ namespace Hemuppgift_Arv_Temp.Game
 
         public void TakePins(int pins)
         {
-            Console.WriteLine($"You take {pins}");
+            //Console.WriteLine($"You take {pins}");
             noPins -= pins;
         }
 
