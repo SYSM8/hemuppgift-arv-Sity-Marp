@@ -22,7 +22,7 @@
 
 
             Player player1 = new HumanPlayer("bob");
-            Player player2 = new HumanPlayer("beb");
+            Player player2 = new ComputerPlayer("beb");
             Player currentPlayer = player1;
 
 
