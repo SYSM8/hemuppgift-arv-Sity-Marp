@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hemuppgift_Arv_Temp.Game
 {
-    internal abstract class Player : Board
+    internal abstract class Player
     {
         public string userId { get; set; }
 
